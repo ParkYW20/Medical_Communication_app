@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Medical Communication Analyzer</title>
+</head>
+<body>
+    <header>
+        <h1>Medical Communication Analyzer</h1>
+    </header>
+    <main>
+        <form action="/upload/" method="post" enctype="multipart/form-data">
+            <label for="file">Upload Audio File:</label>
+            <input type="file" id="file" name="file" accept=".wav,.mp3" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </main>
+</body>
+</html>

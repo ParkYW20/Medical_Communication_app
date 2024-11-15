@@ -1,0 +1,10 @@
+transformers
+torch
+torchaudio
+pyannote.audio
+ffmpeg-python
+fastapi
+uvicorn
+pyyaml
+jinja2
+openai-whisper
