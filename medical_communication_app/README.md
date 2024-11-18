@@ -1,12 +1,15 @@
+
 # Medical Communication Analysis App
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.95+-green.svg)](https://fastapi.tiangolo.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+---
+
 ## 📖 Overview
 
-The **Medical Communication Analysis App** analyzes doctor-patient conversations to identify issues, suggest improvements, and provide examples of better communication. It uses cutting-edge **speech-to-text (STT)**, **language models (RAG)**, and **text analysis techniques** to deliver actionable insights.
+The **Medical Communication Analysis App** is designed to analyze doctor-patient conversations by utilizing advanced AI technologies. This app converts audio files into text, identifies speakers, and provides actionable feedback for improving communication. Its user-friendly interface ensures a seamless workflow for analyzing and reviewing results.
 
 ![App Screenshot](static/logo.png)
 
@@ -14,39 +17,62 @@ The **Medical Communication Analysis App** analyzes doctor-patient conversations
 
 ## 🚀 Features
 
-- **Speech-to-Text (STT)**: Converts audio conversations into text.
-- **Speaker Diarization**: Identifies who said what.
-- **Text Analysis with LLMs**: Extracts key insights and recommendations from conversations.
-- **Database Integration**: Stores analyzed conversations with timestamps.
-- **Web Interface**: Intuitive design for easy upload, processing, and results viewing.
+- **Speech-to-Text (STT)**: Converts audio files to text using OpenAI's Whisper model.
+- **Speaker Diarization**: Identifies and separates speakers using Pyannote's pipeline.
+- **Text Analysis**: Processes conversations using Groq's LLMs to extract insights.
+- **Database Integration**: Automatically stores analysis results with timestamps.
+- **Web Interface**: Upload audio files, view results, and download analysis reports.
 
 ---
 
 ## 🛠️ Installation
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/medical_communication_app.git
-cd medical_communication_app
+### Prerequisites
+
+- Python 3.10+
+- Pip installed
+
+### Steps
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/medical_communication_app.git
+   cd medical_communication_app
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set Up Configuration**
+   - Edit the `config/settings.yaml` file to include your:
+     - **Groq API Key**
+     - **Hugging Face Access Token**
+
+4. **Initialize the Database**
+   ```bash
+   python -c "from app.database import init_db; init_db()"
+   ```
 
 ---
 
 ## ▶️ Usage
-Run the App
+
+### Run the App
+
+Start the FastAPI server:
+```bash
 python main.py
+```
 
-The app will be available at http://127.0.0.1:8000.
-
-### Workflow
-Upload Audio: Provide a conversation audio file.
-Processing: Wait while the app transcribes and analyzes the conversation.
-Results: View the analysis and download the report.
+The app will be available at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ---
 
 ## 📁 Directory Structure
-graphql
-코드 복사
+
+```plaintext
 medical_communication_app/
 ├── app/
 │   ├── __init__.py         # Application initialization
@@ -70,38 +96,30 @@ medical_communication_app/
 ├── README.md               # Project documentation
 ├── requirements.txt        # Python dependencies
 └── .gitignore              # Ignore unnecessary files in version control
-
----
-
-## ⚙️ Configuration
-Update the config/settings.yaml file:
-
-groq:
-  api_key: "your-groq-api-key"
-
-huggingface:
-  access_token: "your-huggingface-token"
-
-llm:
-  model_name: "llama3-groq-70b-8192-tool-use-preview"
+```
 
 ---
 
 ## 🌟 Key Features Explained
-### 1. Speech-to-Text with Whisper
-Powered by OpenAI's whisper model for large-scale transcription accuracy.
-### 2. Speaker Diarization
-Leverages pyannote.audio to separate speakers in multi-party conversations.
-### 3. LLM Integration
-Processes and analyzes text using Groq's LLM APIs, providing insights into communication.
-### 4. Database Storage
-Conversation data and analysis results are stored in a SQLite database.
+
+### 1. **Speech-to-Text with Whisper**
+Utilizes OpenAI's Whisper model for robust transcription.
+
+### 2. **Speaker Diarization**
+Separates speakers in multi-party conversations using Pyannote.
+
+### 3. **LLM Integration**
+Processes conversation data with Groq's LLM APIs for actionable insights.
+
+### 4. **Database Storage**
+Automatically saves analyzed conversations into a SQLite database with timestamps.
 
 ---
 
-## 📋 Example Output
+## 🧪 Example Output
 
-JSON Analysis Result
+### JSON Analysis Result
+```json
 {
     "문제점": "환자가 의사를 정확히 이해하지 못함",
     "개선방안": "더 명확한 설명과 환자의 반응 확인",
@@ -109,59 +127,57 @@ JSON Analysis Result
     "점수": 85,
     "평가근거": "환자의 이해도를 향상시키기 위한 노력이 부족함"
 }
+```
 
----
-
-## 🧪 Testing
-Unit Tests
-
-Add tests in the tests/ directory (if applicable).
-Run tests using:
-pytest
-Manual Testing
-
-Upload various conversation audio files to verify functionality.
+### Database Entry
+```sql
++----+--------------------+---------------------+---------------------+
+| id | conversation_text  | analysis_result    | timestamp           |
++----+--------------------+---------------------+---------------------+
+|  1 | "환자와 의사의 대화..." | {...}           | 2024-11-19 14:25:00 |
++----+--------------------+---------------------+---------------------+
+```
 
 ---
 
 ## 🎨 Frontend Design
-Responsive Layout: Adjusts to different screen sizes.
-Clean UI: Uses a professional CSS design (static/styles.css).
-Error Handling: Clear messages for missing data or processing issues.
+
+- **Responsive Layout**: Optimized for all devices.
+- **Clean UI**: Styled using a minimalist CSS design (`static/styles.css`).
+- **Error Handling**: Clear feedback for missing data or processing issues.
 
 ---
 
-## 🔧 Troubleshooting
-Database Issues: Ensure database.db is created and writable.
-API Key Errors: Verify your Groq and Hugging Face tokens in settings.yaml.
-Python Dependency Conflicts: Use a virtual environment.
+## ⚙️ Configuration
+
+### Example `settings.yaml`
+```yaml
+groq:
+  api_key: "your-groq-api-key"
+
+huggingface:
+  access_token: "your-huggingface-access-token"
+
+llm:
+  model_name: "llama3-groq-70b-8192-tool-use-preview"
+```
+
+---
+
+## ⚡ Troubleshooting
+
+- **Database Issues**: Ensure the `data/database.db` file exists and is writable.
+- **API Errors**: Verify your Groq and Hugging Face tokens in `settings.yaml`.
+- **Python Dependencies**: Use a virtual environment to manage conflicts.
 
 ---
 
 ## 🤝 Contribution
-Feel free to submit issues, create pull requests, or suggest new features!
+
+Contributions are welcome! Feel free to submit issues, fork the repository, or create pull requests.
 
 ---
 
-## 📝 License
-This project is licensed under the MIT License.
+## 📜 License
 
----
-
-### 주요 포인트
-1. **디렉토리 구조**:
-   - 디렉토리와 파일의 역할을 명확히 설명.
-
-2. **설치 및 실행 방법**:
-   - `pip install`, 설정 파일 편집, 데이터베이스 초기화 과정 포함.
-
-3. **사용법**:
-   - 단계별 사용 절차 안내.
-
-4. **결과 예시**:
-   - JSON 분석 결과와 화면 스크린샷 설명.
-
-5. **에러 처리**:
-   - 발생 가능한 문제와 해결책.
-
-이 `README.md`와 디렉토리 구조를 사용하면 프로젝트의 가독성과 완성도가 높아집니다!
+This project is licensed under the [MIT License](LICENSE).
