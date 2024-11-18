@@ -1,5 +1,0 @@
-llm:
-  model_name: "models/polyglot-ko-1.3b" 
-
-rag:
-  knowledge_base_dir: "data/knowledge_base/"
