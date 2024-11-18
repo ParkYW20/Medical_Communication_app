@@ -29,6 +29,8 @@ The **Medical Communication Analysis App** analyzes doctor-patient conversations
 git clone https://github.com/your-username/medical_communication_app.git
 cd medical_communication_app
 
+---
+
 ## ▶️ Usage
 Run the App
 python main.py
@@ -39,6 +41,8 @@ The app will be available at http://127.0.0.1:8000.
 Upload Audio: Provide a conversation audio file.
 Processing: Wait while the app transcribes and analyzes the conversation.
 Results: View the analysis and download the report.
+
+---
 
 ## 📁 Directory Structure
 graphql
@@ -67,6 +71,8 @@ medical_communication_app/
 ├── requirements.txt        # Python dependencies
 └── .gitignore              # Ignore unnecessary files in version control
 
+---
+
 ## ⚙️ Configuration
 Update the config/settings.yaml file:
 
@@ -79,6 +85,7 @@ huggingface:
 llm:
   model_name: "llama3-groq-70b-8192-tool-use-preview"
 
+---
 
 ## 🌟 Key Features Explained
 ### 1. Speech-to-Text with Whisper
@@ -90,6 +97,8 @@ Processes and analyzes text using Groq's LLM APIs, providing insights into commu
 ### 4. Database Storage
 Conversation data and analysis results are stored in a SQLite database.
 
+---
+
 ## 📋 Example Output
 
 JSON Analysis Result
@@ -100,6 +109,9 @@ JSON Analysis Result
     "점수": 85,
     "평가근거": "환자의 이해도를 향상시키기 위한 노력이 부족함"
 }
+
+---
+
 ## 🧪 Testing
 Unit Tests
 
@@ -110,18 +122,26 @@ Manual Testing
 
 Upload various conversation audio files to verify functionality.
 
+---
+
 ## 🎨 Frontend Design
 Responsive Layout: Adjusts to different screen sizes.
 Clean UI: Uses a professional CSS design (static/styles.css).
 Error Handling: Clear messages for missing data or processing issues.
+
+---
 
 ## 🔧 Troubleshooting
 Database Issues: Ensure database.db is created and writable.
 API Key Errors: Verify your Groq and Hugging Face tokens in settings.yaml.
 Python Dependency Conflicts: Use a virtual environment.
 
+---
+
 ## 🤝 Contribution
 Feel free to submit issues, create pull requests, or suggest new features!
+
+---
 
 ## 📝 License
 This project is licensed under the MIT License.
