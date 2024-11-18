@@ -9,7 +9,7 @@
 
 ## 📖 Overview
 
-The **Medical Communication Analysis App** is designed to analyze doctor-patient conversations by utilizing advanced AI technologies. This app converts audio files into text, identifies speakers, and provides actionable feedback for improving communication. Its user-friendly interface ensures a seamless workflow for analyzing and reviewing results.
+The **의료 소통 분석 앱** is designed to analyze doctor-patient conversations by utilizing advanced AI technologies. This app converts audio files into text, identifies speakers, and provides actionable feedback for improving communication. Its user-friendly interface ensures a seamless workflow for analyzing and reviewing results.
 
 ![App Screenshot](medical_communication_app/static/logo.png)
 
