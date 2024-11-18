@@ -9,7 +9,7 @@
 
 ## 📖 Overview
 
-The **의료 소통 분석 앱** is designed to analyze doctor-patient conversations by utilizing advanced AI technologies. This app converts audio files into text, identifies speakers, and provides actionable feedback for improving communication. Its user-friendly interface ensures a seamless workflow for analyzing and reviewing results.
+의료 소통 분석 앱은 의사와 환자 간의 대화를 분석하기 위해 고급 AI 기술을 활용하는 앱입니다. 이 앱은 오디오 파일을 텍스트로 변환하고, 화자를 식별하며, 소통 개선을 위한 실질적인 피드백을 제공합니다. 사용자 친화적인 인터페이스를 통해 분석 및 결과 검토를 손쉽게 진행할 수 있습니다.
 
 ![App Screenshot](medical_communication_app/static/logo.png)
 
@@ -17,11 +17,11 @@ The **의료 소통 분석 앱** is designed to analyze doctor-patient conversat
 
 ## 🚀 Features
 
-- **Speech-to-Text (STT)**: Converts audio files to text using OpenAI's Whisper model.
-- **Speaker Diarization**: Identifies and separates speakers using Pyannote's pipeline.
-- **Text Analysis**: Processes conversations using Groq's LLMs to extract insights.
-- **Database Integration**: Automatically stores analysis results with timestamps.
-- **Web Interface**: Upload audio files, view results, and download analysis reports.
+- **음성 인식 (STT): OpenAI의 Whisper 모델을 사용하여 오디오 파일을 텍스트로 변환합니다.
+- **화자 분리: Pyannote의 파이프라인을 활용해 화자를 식별하고 분리합니다.
+- **텍스트 분석: Groq의 LLM을 통해 대화를 분석하고 통찰을 추출합니다.
+- **데이터베이스 연동: 분석 결과를 타임스탬프와 함께 자동으로 저장합니다.
+- **웹 인터페이스: 오디오 파일 업로드, 결과 확인, 분석 보고서 다운로드 기능을 제공합니다.
 
 ---
 
