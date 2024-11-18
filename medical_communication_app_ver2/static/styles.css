@@ -1,0 +1,148 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 바디 스타일 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* 래퍼 */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 컨테이너 */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 로고 스타일 */
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 입력 및 버튼 스타일 */
+input[type="file"] {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2196F3;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0b7dda;
+}
+
+/* 분석 결과 박스 */
+.analysis-box {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.analysis-box pre {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* 로딩 애니메이션 */
+.loader {
+    border: 12px solid #f3f3f3;
+    border-top: 12px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 40px auto 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+    color: #e74c3c;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* 리포트 스타일 */
+.report h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.report p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* 다운로드 버튼 스타일 */
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #f39c12;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.btn-secondary:hover {
+    background-color: #d35400;
+}

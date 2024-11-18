@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+jinja2
+requests
+numpy
+sentence-transformers
+python-multipart
+aiofiles
+torch
+transformers
+sentencepiece
+whisper
+pyannote.audio
