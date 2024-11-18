@@ -27,7 +27,7 @@
 
 ## 🧪 Output
 
-### JSON Analysis Result
+### JSON 분석 결과
 ```json
 {
     "문제점": "환자가 의사를 정확히 이해하지 못함",
@@ -38,7 +38,7 @@
 }
 ```
 
-### Database Entry
+### 데이터 베이스 저장
 ```sql
 +----+--------------------+---------------------+---------------------+
 | id | conversation_text  | analysis_result    | timestamp           |
@@ -58,4 +58,4 @@ Contributions are welcome! Feel free to submit issues, fork the repository, or c
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
+이 프로젝트는 MIT 라이선스로 제공됩니다.(LICENSE).
