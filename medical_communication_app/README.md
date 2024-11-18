@@ -29,18 +29,21 @@ The **Medical Communication Analysis App** analyzes doctor-patient conversations
 git clone https://github.com/your-username/medical_communication_app.git
 cd medical_communication_app
 2. Install Dependencies
-
+bash
+코드 복사
 pip install -r requirements.txt
 3. Set Up Configuration
 Edit the config/settings.yaml file with your credentials:
 Groq API Key
 Hugging Face Access Token
 4. Initialize the Database
-
+bash
+코드 복사
 python -c "from app.database import init_db; init_db()"
 ▶️ Usage
 Run the App
-
+bash
+코드 복사
 python main.py
 The app will be available at http://127.0.0.1:8000.
 Workflow
@@ -48,7 +51,8 @@ Upload Audio: Provide a conversation audio file.
 Processing: Wait while the app transcribes and analyzes the conversation.
 Results: View the analysis and download the report.
 📁 Directory Structure
-
+graphql
+코드 복사
 medical_communication_app/
 ├── app/
 │   ├── __init__.py         # Application initialization
@@ -75,6 +79,8 @@ medical_communication_app/
 ⚙️ Configuration
 Update the config/settings.yaml file:
 
+yaml
+코드 복사
 groq:
   api_key: "your-groq-api-key"
 
@@ -91,11 +97,11 @@ Leverages pyannote.audio to separate speakers in multi-party conversations.
 3. LLM Integration
 Processes and analyzes text using Groq's LLM APIs, providing insights into communication.
 4. Database Storage
-Conversation data and analysis results are stored in a SQLite database
-
+Conversation data and analysis results are stored in a SQLite database.
 📋 Example Output
 JSON Analysis Result
-
+json
+코드 복사
 {
     "문제점": "환자가 의사를 정확히 이해하지 못함",
     "개선방안": "더 명확한 설명과 환자의 반응 확인",
@@ -103,13 +109,13 @@ JSON Analysis Result
     "점수": 85,
     "평가근거": "환자의 이해도를 향상시키기 위한 노력이 부족함"
 }
-
 🧪 Testing
 Unit Tests
 
 Add tests in the tests/ directory (if applicable).
 Run tests using:
-
+bash
+코드 복사
 pytest
 Manual Testing
 
@@ -127,6 +133,9 @@ Feel free to submit issues, create pull requests, or suggest new features!
 
 📝 License
 This project is licensed under the MIT License.
+
+markdown
+코드 복사
 
 ---
 
