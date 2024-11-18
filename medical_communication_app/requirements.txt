@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+jinja2
+python-multipart
+pydub
+whisper
+groq
+torch
+transformers
+sentencepiece
+scikit-learn
+numpy
+PyYAML
+pyannote.audio
