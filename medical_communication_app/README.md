@@ -28,29 +28,19 @@ The **Medical Communication Analysis App** analyzes doctor-patient conversations
 ```bash
 git clone https://github.com/your-username/medical_communication_app.git
 cd medical_communication_app
-2. Install Dependencies
-bash
-코드 복사
-pip install -r requirements.txt
-3. Set Up Configuration
-Edit the config/settings.yaml file with your credentials:
-Groq API Key
-Hugging Face Access Token
-4. Initialize the Database
-bash
-코드 복사
-python -c "from app.database import init_db; init_db()"
-▶️ Usage
+
+## ▶️ Usage
 Run the App
-bash
-코드 복사
 python main.py
+
 The app will be available at http://127.0.0.1:8000.
-Workflow
+
+### Workflow
 Upload Audio: Provide a conversation audio file.
 Processing: Wait while the app transcribes and analyzes the conversation.
 Results: View the analysis and download the report.
-📁 Directory Structure
+
+## 📁 Directory Structure
 graphql
 코드 복사
 medical_communication_app/
@@ -76,11 +66,10 @@ medical_communication_app/
 ├── README.md               # Project documentation
 ├── requirements.txt        # Python dependencies
 └── .gitignore              # Ignore unnecessary files in version control
-⚙️ Configuration
+
+## ⚙️ Configuration
 Update the config/settings.yaml file:
 
-yaml
-코드 복사
 groq:
   api_key: "your-groq-api-key"
 
@@ -89,19 +78,21 @@ huggingface:
 
 llm:
   model_name: "llama3-groq-70b-8192-tool-use-preview"
-🌟 Key Features Explained
-1. Speech-to-Text with Whisper
+
+
+## 🌟 Key Features Explained
+### 1. Speech-to-Text with Whisper
 Powered by OpenAI's whisper model for large-scale transcription accuracy.
-2. Speaker Diarization
+### 2. Speaker Diarization
 Leverages pyannote.audio to separate speakers in multi-party conversations.
-3. LLM Integration
+### 3. LLM Integration
 Processes and analyzes text using Groq's LLM APIs, providing insights into communication.
-4. Database Storage
+### 4. Database Storage
 Conversation data and analysis results are stored in a SQLite database.
-📋 Example Output
+
+## 📋 Example Output
+
 JSON Analysis Result
-json
-코드 복사
 {
     "문제점": "환자가 의사를 정확히 이해하지 못함",
     "개선방안": "더 명확한 설명과 환자의 반응 확인",
@@ -109,33 +100,31 @@ json
     "점수": 85,
     "평가근거": "환자의 이해도를 향상시키기 위한 노력이 부족함"
 }
-🧪 Testing
+## 🧪 Testing
 Unit Tests
 
 Add tests in the tests/ directory (if applicable).
 Run tests using:
-bash
-코드 복사
 pytest
 Manual Testing
 
 Upload various conversation audio files to verify functionality.
-🎨 Frontend Design
+
+## 🎨 Frontend Design
 Responsive Layout: Adjusts to different screen sizes.
 Clean UI: Uses a professional CSS design (static/styles.css).
 Error Handling: Clear messages for missing data or processing issues.
-🔧 Troubleshooting
+
+## 🔧 Troubleshooting
 Database Issues: Ensure database.db is created and writable.
 API Key Errors: Verify your Groq and Hugging Face tokens in settings.yaml.
 Python Dependency Conflicts: Use a virtual environment.
-🤝 Contribution
+
+## 🤝 Contribution
 Feel free to submit issues, create pull requests, or suggest new features!
 
-📝 License
+## 📝 License
 This project is licensed under the MIT License.
-
-markdown
-코드 복사
 
 ---
 
