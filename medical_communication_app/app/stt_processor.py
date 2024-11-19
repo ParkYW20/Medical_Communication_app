@@ -31,9 +31,17 @@ class STTProcessor:
             use_auth_token=hf_token
         )
 
+    def preprocess_text(self, text):
+        """
+        STT 결과를 전처리하여 불필요한 유니코드 문자나 특수문자를 제거합니다.
+        """
+        # 불필요한 유니코드 문자와 특수문자 제거
+        cleaned_text = ''.join(c for c in text if c.isprintable())
+        return cleaned_text.strip()
+
     def process_audio(self, audio_path):
         # 화자 분리 수행
-        diarization_result = self.diarization_pipeline(audio_path,num_speakers=2)
+        diarization_result = self.diarization_pipeline(audio_path, num_speakers=2)
 
         # 오디오 파일 로드
         audio = whisper.load_audio(audio_path)
@@ -55,8 +63,11 @@ class STTProcessor:
             result = self.model.transcribe(audio_segment, language='ko')
             transcription_text = result['text']
 
+            # 전처리 수행
+            preprocessed_text = self.preprocess_text(transcription_text)
+
             # LLM을 통한 텍스트 교정
-            corrected_text = self.correct_text_with_llm(transcription_text)
+            corrected_text = self.correct_text_with_llm(preprocessed_text)
 
             segments.append({
                 "speaker": speaker,

@@ -24,7 +24,14 @@ class RAGAgent:
     def generate_response(self, conversation_text):
         # 가장 유사한 문서 검색
         query_embedding = get_query_embedding(conversation_text, self.vectorizer)
-        similar_docs = search_similar_documents(query_embedding, self.embeddings, self.documents, top_k=3)
+        similar_docs = search_similar_documents(query_embedding, self.embeddings, self.documents, top_k=2)
+
+        # 평가 지표 문서 추가
+        evaluation_criteria_path = "knowledge_base/evaluation_criteria_weighted.txt"
+        if os.path.exists(evaluation_criteria_path):
+            with open(evaluation_criteria_path, "r", encoding="utf-8") as f:
+                evaluation_criteria = f.read()
+                similar_docs.append(evaluation_criteria)
 
         # 문서들을 프롬프트에 추가
         knowledge_context = "\n\n".join(similar_docs)
@@ -51,7 +58,7 @@ class RAGAgent:
 
     def create_prompt(self, conversation_text, knowledge_context):
         # 프롬프트 생성 (8000 토큰 한계 고려)
-        max_conversation_length = 1000
+        max_conversation_length = 2000
         if len(conversation_text) > max_conversation_length:
             conversation_text = conversation_text[:max_conversation_length] + "..."
 
@@ -70,7 +77,7 @@ class RAGAgent:
             '  "소통 점수": "<0부터 100 사이의 점수>",\n'
             '  "평가 근거": "<점수의 이유와 분석된 대화 및 관련 지식 정보에 기반한 구체적인 설명>"\n'
             "}\n\n"
-            "리포트를 한글로 작성하며, 가능한 명확하고 구체적인 정보를 근거와 함께 제공해 주세요."
+            "리포트를 한글로 작성하며, 가능한 명확하고 구체적인 정보를 근거와 함께 형식에 맞게 작성해주세요."
         )
         return prompt
 
