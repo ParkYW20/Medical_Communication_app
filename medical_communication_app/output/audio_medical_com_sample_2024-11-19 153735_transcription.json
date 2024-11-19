@@ -1,0 +1,40 @@
+{
+    "segments": [
+        {
+            "speaker": "SPEAKER_00",
+            "start": 1.061120543293718,
+            "end": 2.232597623089983,
+            "text": "어디가 아파서 오셨나요?"
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 2.7928692699490663,
+            "end": 3.4380305602716468,
+            "text": "머리 요?"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 3.8624787775891343,
+            "end": 6.375212224108658,
+            "text": "언제부터 아프셨나요? 한 주일?"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 6.748726655348047,
+            "end": 7.66553480475382,
+            "text": "<tool_call>\n{\"id\": 0, \"name\": \"correctGrammaticalErrors\", \"arguments\": {\"text\": \"\\ud314\\ud06c\", \"correctionOptions\": {\"language\": \"ko\", \"correctPunctuation\": true, \"correctSpelling\": true, \"correctGrammar\": true}}}\n</tool_call>"
+        },
+        {
+            "speaker": "SPEAKER_00",
+            "start": 7.8013582342954155,
+            "end": 9.73684210526316,
+            "text": "다른 약을 복용해 보셨나요?"
+        },
+        {
+            "speaker": "SPEAKER_01",
+            "start": 11.179966044142615,
+            "end": 12.792869269949067,
+            "text": "아니요."
+        }
+    ]
+}

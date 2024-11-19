@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <title>분석 결과</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .score-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .score-bar-fill {
+            height: 25px;
+            background-color: #4caf50;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            line-height: 25px;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -11,22 +28,27 @@
             <h1>분석 결과 리포트</h1>
             <div class="report">
                 <h2>1. 의사 소통에서의 문제점</h2>
-                <p>{{ analysis_result.get('문제점', '데이터가 없습니다.') }}</p>
+                <p>{{ analysis_result.get('대화의 문제점', '데이터가 없습니다.') }}</p>
 
                 <h2>2. 개선 방안</h2>
-                <p>{{ analysis_result.get('개선방안', '데이터가 없습니다.') }}</p>
+                <p>{{ analysis_result.get('개선 방안', '데이터가 없습니다.') }}</p>
 
                 <h2>3. 개선된 대화 예시</h2>
-                <p>{{ analysis_result.get('개선된대화예시', '데이터가 없습니다.') }}</p>
+                <p>{{ analysis_result.get('개선된 대화 예시', '데이터가 없습니다.') }}</p>
 
-                <h2>4. 점수</h2>
-                <p>{{ analysis_result.get('점수', '데이터가 없습니다.') }}</p>
+                <h2>4. 소통 점수</h2>
+                <div class="score-bar">
+                    <div class="score-bar-fill" style="width: {{ score }}%;">
+                        {{ score }}점
+                    </div>
+                </div>
 
                 <h2>5. 평가 근거</h2>
-                <p>{{ analysis_result.get('평가근거', '데이터가 없습니다.') }}</p>
+                <p>{{ analysis_result.get('평가 근거', '데이터가 없습니다.') }}</p>
             </div>
             <a href="/" class="btn-primary">홈으로 돌아가기</a>
-            <a href="/download/" class="btn-secondary" download>결과 다운로드</a>
+            <a href="/download/json/" class="btn-secondary" download>JSON 다운로드</a>
+            <a href="/download/pdf/" class="btn-secondary" download>PDF 다운로드</a>
         </div>
     </div>
 </body>
