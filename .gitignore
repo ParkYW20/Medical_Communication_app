@@ -17,12 +17,12 @@ Eui-yeon-dam-venv/
 .DS_Store
 
 # Output and uploads
-output/
-uploads/
-uploaded_files/
+medical_communication_app/output/
+medical_communication_app/uploads/
+medical_communication_app/uploaded_files/
 
 # Docker
 *.log
 
 # setting
-config/settings.yaml
+medical_communication_app/config/settings.yaml
