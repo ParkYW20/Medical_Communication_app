@@ -4,7 +4,7 @@ pydantic
 jinja2
 python-multipart
 pydub
-whisper
+openai-whisper # whisper에서 수정함 
 groq
 torch
 transformers
