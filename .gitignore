@@ -25,4 +25,4 @@ uploaded_files/
 *.log
 
 # setting
-# config/settings.yaml
+config/settings.yaml
