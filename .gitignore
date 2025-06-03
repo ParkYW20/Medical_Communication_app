@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Virtual environment
+Eui-yeon-dam-venv/
+
+# VSCode settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Output and uploads
+output/
+uploads/
+uploaded_files/
+
+# Docker
+*.log
